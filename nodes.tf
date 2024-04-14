@@ -9,7 +9,10 @@ resource "aws_instance" "nodes" {
   monitoring                  = var.nodes_monitoring
 
   subnet_id              = var.subnet_id
-  vpc_security_group_ids = [aws_security_group.loadtest.id]
+  vpc_security_groups_ids = concat(
+    [aws_security_group.loadtest.id],  # Default security group ID
+    var.additional_security_groups != null ? var.additional_security_groups : []
+  )
 
   iam_instance_profile = aws_iam_instance_profile.loadtest.name
   user_data_base64     = local.setup_nodes_base64

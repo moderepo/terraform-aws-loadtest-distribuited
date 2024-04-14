@@ -236,3 +236,9 @@ variable "locust_exporter" {
   }
   description = "Export locust result to prometheus"
 }
+
+variable "additional_security_groups" {
+  description = "Additional security groups to attach"
+  type        = list(string)
+  default     = []
+}

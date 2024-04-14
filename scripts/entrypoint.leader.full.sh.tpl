@@ -15,6 +15,8 @@ sudo pip3 install bzt==$BZT_VERSION
 
 # LOCUST
 export LOCUST_VERSION="2.9.0"
+sudo pip3 uninstall urllib3
+sudo pip3 install urllib3==1.26.6
 sudo pip3 install locust==$LOCUST_VERSION
 
 # JMETER
