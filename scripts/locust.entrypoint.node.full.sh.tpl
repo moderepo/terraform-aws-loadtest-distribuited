@@ -7,6 +7,7 @@ sudo yum install -y pcre2-devel.x86_64 python gcc python3-devel tzdata curl unzi
 export LOCUST_VERSION="2.9.0"
 sudo pip3 uninstall urllib3
 sudo pip3 install urllib3==1.26.6
+sudo pip3 install locust_plugins
 sudo pip3 install locust==$LOCUST_VERSION
 
 export PRIVATE_IP=$(hostname -I | awk '{print $1}')
