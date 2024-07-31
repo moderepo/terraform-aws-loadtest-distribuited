@@ -37,6 +37,14 @@ resource "aws_security_group" "loadtest" {
     cidr_blocks = var.ssh_cidr_ingress_blocks
   }
 
+  ingress {
+    description = "port 8080"
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = var.ssh_cidr_ingress_blocks
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
